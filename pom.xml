@@ -11,7 +11,7 @@
 	<groupId>group2</groupId>
 	<artifactId>Libaray-Services</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>LibarayServices</name>
+	<name>LibraryServices</name>
 	<description> LibraryServices</description>
 
 	<properties>
