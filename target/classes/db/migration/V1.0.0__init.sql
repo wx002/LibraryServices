@@ -1,0 +1,1 @@
+-- Empty initial file to populate directory that allows FlywayDB migration.
