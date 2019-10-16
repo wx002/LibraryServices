@@ -20,7 +20,7 @@ public class UserProfile implements Serializable{
     private String username;
     private String dateOfBirth;
     private String email;
-    private String Fees;
+    private Float Fees;
     private ArrayList<String> booksBorrowed;
     private ArrayList<String> roomReserved;
     private Date libraryCardExpireDate;
