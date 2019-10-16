@@ -28,36 +28,42 @@ import lombok.ToString;
  */
 @Data
 @Entity
+@Table(name = "books")
 @ToString
 public class Books implements Serializable{
     
     private static final long serialVersionUID = 2L;
     
+    //TODO, dont use data with meaning as primary key
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long bookID;
+    
     private long isbn;
     
     private String title;
     
+    
     @ManyToOne
-    @JoinColumn(name = "author", nullable = false)
-    private BooksByAuthor author;
+    @JoinColumn(name = "authorID", nullable = false)
+    private BooksByAuthor authorID;
     
     @OneToMany(
-            mappedBy = "bookGenres",
+            mappedBy = "genreID",
             cascade = CascadeType.ALL,
             fetch = FetchType.LAZY
     )
     @ToString.Exclude
     private List<BooksByGenre> genres;
     
+    
     @OneToMany(
-            mappedBy = "bookYear",
+            mappedBy = "pubYear",
             cascade = CascadeType.ALL,
             fetch = FetchType.LAZY
     )
     @ToString.Exclude
     private List<BooksByYear> year;
-   
     
+    private int copies;
 }
