@@ -1,1 +1,9 @@
-group2/Libaray/Services/LibarayServicesApplication.class
+group2\Libaray\Services\model\BooksByGenre.class
+group2\Libaray\Services\model\RoomReservations.class
+group2\Libaray\Services\model\Members.class
+group2\Libaray\Services\model\BooksByYear.class
+group2\Libaray\Services\model\Borrows.class
+group2\Libaray\Services\LibarayServicesApplication.class
+group2\Libaray\Services\model\BooksByAuthor.class
+group2\Libaray\Services\model\Library.class
+group2\Libaray\Services\model\Books.class
