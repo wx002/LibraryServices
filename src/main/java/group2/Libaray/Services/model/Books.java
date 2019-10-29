@@ -43,11 +43,10 @@ public class Books implements Serializable{
     
     private String title;
     
-    /*
+    
     @ManyToOne
-    @JoinColumn(name = "authorID", nullable = false)
-    */
-    private String author;
+    @JoinColumn(name = "author", nullable = false)
+    private Author author;
     
     
     /*

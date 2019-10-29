@@ -6,6 +6,7 @@
 package group2.Libaray.Services.model;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -24,21 +25,20 @@ import lombok.ToString;
 @Entity
 @Table(name = "author")
 @ToString
-public class BooksByAuthor implements Serializable{
+public class Author implements Serializable{
     private static final long serialVersionUIL = 1L;
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long authorID;
     
-    @ManyToOne
-    @JoinColumn(name = "isbn", nullable = false)
-    private Books isbn;
+    @OneToMany(
+            mappedBy = "isbn",
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY
+    )
+    private List<Books> wrote;
     
     @Column(name = "authName")
     private String name;
-    
-    private String litType;
-    
-    
 }

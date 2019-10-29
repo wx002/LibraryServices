@@ -1,11 +1,6 @@
-CREATE TABLE books(
-    bookID  int primary key auto_increment,
-    isbn varchar(20), --No clue what max number should be?
-    title   varchar(40),
-    author varchar(20),
-    copies int
-/*    genreID int,
-    pubYear DATE
-*/
+CREATE TABLE author(
+    authorID  int primary key auto_increment,
+    wrote varchar(20), 
+    authName   varchar(40),
 );
 
