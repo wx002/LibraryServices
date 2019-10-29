@@ -37,17 +37,20 @@ public class Books implements Serializable{
     //TODO, dont use data with meaning as primary key
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long bookID;
+    private Long bookID;
     
-    private long isbn;
+    private String isbn;
     
     private String title;
     
-    
+    /*
     @ManyToOne
     @JoinColumn(name = "authorID", nullable = false)
-    private BooksByAuthor authorID;
+    */
+    private String author;
     
+    
+    /*
     @OneToMany(
             mappedBy = "genreID",
             cascade = CascadeType.ALL,
@@ -62,8 +65,10 @@ public class Books implements Serializable{
             cascade = CascadeType.ALL,
             fetch = FetchType.LAZY
     )
+    
     @ToString.Exclude
     private List<BooksByYear> year;
+    */
     
     private int copies;
 }
