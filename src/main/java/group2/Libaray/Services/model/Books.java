@@ -43,25 +43,13 @@ public class Books implements Serializable{
     
     private String title;
     
+    private int copies;
     
-    private String author;
-    
-    /*
     @ManyToOne
-    @JoinColumn(name = "author", nullable = false)
+    @JoinColumn(name = "author_id", nullable = false)
     private Author author;
     
-    
     /*
-    @OneToMany(
-            mappedBy = "genreID",
-            cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY
-    )
-    @ToString.Exclude
-    private List<BooksByGenre> genres;
-    
-    
     @OneToMany(
             mappedBy = "pubYear",
             cascade = CascadeType.ALL,
@@ -72,5 +60,5 @@ public class Books implements Serializable{
     private List<BooksByYear> year;
     */
     
-    private int copies;
+
 }

@@ -32,16 +32,18 @@ public class Author implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long authorID;
     
-    @Column(name = "authName")
-    private String name;
+    private String authname;
     
+    //private String primaryGenre;
+    
+    /*
     @OneToMany(
             mappedBy = "author",
             cascade = CascadeType.ALL,
             fetch = FetchType.LAZY
     )
-    @Column(name = "wrote")
-    private List<Books> wrote;
+    private List<Books> books;
+    */
     
 
 }

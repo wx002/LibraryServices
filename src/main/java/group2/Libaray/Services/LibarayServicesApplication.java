@@ -22,10 +22,10 @@ public class LibarayServicesApplication {
     public CommandLineRunner demo(BookRepository repository) {
         return (args) -> {
             // fetch all customers
-            log.info("Books found with findAll():");
+            log.info("auth found with findAll():");
             log.info("-------------------------------");
-            repository.findAll().forEach((book) -> {
-                log.info(book.toString());
+            repository.findAll().forEach((authName) -> {
+                log.info(authName.toString());
             });
             log.info("");
         };

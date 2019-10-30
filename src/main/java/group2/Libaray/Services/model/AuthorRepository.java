@@ -7,7 +7,7 @@ import org.springframework.data.repository.CrudRepository;
  * FlightRepository
  */
 public interface AuthorRepository extends CrudRepository<Author, Long> {
-    List<Author> findByName(String name); 
+    List<Author> findByauthname(String authname); 
     
     @Override
     List<Author> findAll();
