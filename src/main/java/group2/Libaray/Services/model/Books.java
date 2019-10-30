@@ -44,6 +44,9 @@ public class Books implements Serializable{
     private String title;
     
     
+    private String author;
+    
+    /*
     @ManyToOne
     @JoinColumn(name = "author", nullable = false)
     private Author author;
