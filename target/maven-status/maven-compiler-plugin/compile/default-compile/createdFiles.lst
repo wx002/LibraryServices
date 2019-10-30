@@ -1,1 +1,8 @@
-group2\Libaray\Services\LibarayServicesApplication.class
+group2\Library\Services\LibraryServicesApplication.class
+group2\Library\DBInterfaces\UserRepo.class
+group2\Library\DBInterfaces\LoggingRepo.class
+group2\Library\DBInterfaces\RoomRepo.class
+group2\Library\Services\Controller\RegisterController.class
+group2\Library\Services\Controller\LoginController.class
+group2\Library\DBInterfaces\IncomeRepo.class
+group2\Library\Services\Controller\WelcomeController.class

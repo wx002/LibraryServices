@@ -15,7 +15,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
  */
 @Data
 @Document(collection = "Income")
-public class income implements Serializable {
+public class Income implements Serializable {
     private int userID;
     private float paidFee;
     private float currentFeeTotal;

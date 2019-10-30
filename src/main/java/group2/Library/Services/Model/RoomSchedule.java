@@ -16,9 +16,13 @@ import org.springframework.data.mongodb.core.mapping.Document;
  */
 @Data
 @Document(collection = "RoomSchedule")
-public class RoomSchedule {
+public class RoomSchedule implements Serializable{
     private int roomID;
     private ArrayList<String> userTracker; 
     // Ex String: "name:somename, date: some date, timeframe:starttime - endtime"
     
+    public RoomSchedule(int roomID){
+        this.roomID = roomID;
+        this.userTracker = new ArrayList<>();
+    }
 }
