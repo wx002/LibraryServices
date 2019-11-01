@@ -36,14 +36,15 @@ public class Author implements Serializable{
     
     //private String primaryGenre;
     
-    /*
+    
     @OneToMany(
             mappedBy = "author",
             cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY
+            fetch = FetchType.EAGER
     )
+    @ToString.Exclude
     private List<Books> books;
-    */
+    
     
 
 }
