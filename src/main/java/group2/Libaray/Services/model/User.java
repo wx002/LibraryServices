@@ -6,45 +6,41 @@
 package group2.Libaray.Services.model;
 
 import java.io.Serializable;
-import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import lombok.Data;
 import lombok.ToString;
 
 @Data
 @Entity
-@Table(name = "author")
+@Table(name = "user")
 @ToString
-public class Author implements Serializable{
-    private static final long serialVersionUIL = 1L;
-    
+public class User implements Serializable{
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long authorID;
+    @Column(name = "user_id")
+    private Long id;
     
-    private String authname;
+    @Column(name= "firstname")
+    private String firstName;
     
-    //private String primaryGenre;
+    private String lastname;
     
+    private String username;
     
-    @OneToMany(
-            mappedBy = "author",
-            cascade = CascadeType.ALL,
-            fetch = FetchType.EAGER
-    )
-    @ToString.Exclude
-    private List<Book> books;
+    private String email;
     
+    @Column(name = "pass")
+    private String passwordHash;
     
-
+    @Column(name = "age")
+    private int userAge;
+    
+    private String address;
+    
 }

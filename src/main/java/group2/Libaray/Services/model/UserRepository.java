@@ -15,10 +15,12 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
  * BookRepository
  */
 @RepositoryRestResource
-public interface BookRepository extends CrudRepository<Book, Long>  {
-    List<Book> findByisbn(String isbn);
+public interface UserRepository extends CrudRepository<User, Long>  {
+    List<User> findBylastname(String lastName);
+    
+    List<User> findByusername(String username);
     
     @Override
-    List<Book> findAll();
+    List<User> findAll();
     
 }
