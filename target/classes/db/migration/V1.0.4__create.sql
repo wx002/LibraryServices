@@ -15,10 +15,17 @@ CREATE TABLE user(
     email           varChar(40),
     pass            varChar(40),
     age         int,
-    address     varChar(50)
+    address     varChar(50),
+    usertype        varChar(5)
 
 );
 
-insert into user(firstname, lastname, username, email, pass, age, address) 
-    values('Rafael', 'Rejuso', 'testUserName','testing@email.com' , 'testPassHash', 01, '1 East Jackson');
+insert into user(firstname, lastname, username, email, pass, age, address, usertype) 
+    values('Rafael', 'Rejuso', 'testUserName','testing@email.com' , 'testPassHash',
+             01, '1 East Jackson', 'STDNT');
+
+insert into user(firstname, lastname, username, email, pass, age, address, usertype) 
+    values('Foo', 'Bar', 'UserName','test@gmail.com' , 'passhashtest',
+             23, '2 East Jackson', 'FCLTY');
+
 

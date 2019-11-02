@@ -45,6 +45,8 @@ public class Book implements Serializable{
     
     private int copies;
     
+    private int maxcopies;
+    
     @ManyToOne
     @JoinColumn(name = "author_id", nullable = false)
     private Author author;

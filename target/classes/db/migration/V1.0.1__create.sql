@@ -3,6 +3,7 @@ CREATE TABLE books(
     isbn varchar(20), --No clue what max number should be?
     title   varchar(40),
     copies int,
+    maxcopies int,
     author_id long
 );
 

@@ -1,4 +1,4 @@
-package group2.Libaray.Services;
+package group2.Libaray.Services.model;
 
 import group2.Libaray.Services.model.Author;
 import group2.Libaray.Services.model.AuthorRepository;

@@ -2,6 +2,8 @@ package group2.Libaray.Services;
 
 import group2.Libaray.Services.model.AuthorRepository;
 import group2.Libaray.Services.model.BookRepository;
+import group2.Libaray.Services.model.FeeRepository;
+import group2.Libaray.Services.model.User;
 import group2.Libaray.Services.model.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -21,17 +23,22 @@ public class LibarayServicesApplication {
         private static final Logger log = LoggerFactory.getLogger(LibarayServicesApplication.class);
         
         @Bean
-    public CommandLineRunner demo(UserRepository repository) {
+    public CommandLineRunner demo(FeeRepository repository, UserRepository rep2) {
         return new CommandLineRunner() {
             @Override
             public void run(String[] args) throws Exception {
                 // fetch all customers
+                
                 log.info("Authors found with findAll():");
                 log.info("-------------------------------");
-
+                    
+                
+                log.info(repository.findByuserid(rep2.findBylastname("Rejuso").get(0)).toString());
+                /*
                 repository.findAll().forEach((authName) -> {
                 log.info(authName.toString());
                 });
+                */
                 log.info("");
                 
             }

@@ -8,6 +8,8 @@ package group2.Libaray.Services.model;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
@@ -43,4 +45,15 @@ public class User implements Serializable{
     
     private String address;
     
+    
+    @Enumerated(EnumType.STRING)
+    private UserType usertype;
+    
+    public enum UserType{
+        STDNT,
+        ELDRY,
+        CHILD,
+        REGLR,
+        FCLTY;
+    }
 }

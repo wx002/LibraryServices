@@ -36,7 +36,6 @@ public class Author implements Serializable{
     
     //private String primaryGenre;
     
-    
     @OneToMany(
             mappedBy = "author",
             cascade = CascadeType.ALL,

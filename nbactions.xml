@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>CUSTOM-testing</actionName>
+            <displayName>testing</displayName>
+            <goals>
+                <goal>test</goal>
+            </goals>
+        </action>
+    </actions>
