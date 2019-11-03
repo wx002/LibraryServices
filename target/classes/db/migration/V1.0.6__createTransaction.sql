@@ -1,5 +1,6 @@
 CREATE TABLE transactions(
     transaction_id long primary key auto_increment,
+    transactiondate         timestamp default current_timestamp,
     bookID        long,
     userid      long,
     itemstatus  varchar(4)

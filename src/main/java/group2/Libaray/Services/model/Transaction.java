@@ -6,6 +6,7 @@
 package group2.Libaray.Services.model;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -29,6 +30,8 @@ public class Transaction implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "transaction_id")
     private long id;
+    
+    private Timestamp transactiondate;
     
     @ManyToOne
     @JoinColumn(name = "bookID", nullable = false)
