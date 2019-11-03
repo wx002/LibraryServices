@@ -3,6 +3,7 @@ package group2.Libaray.Services;
 import group2.Libaray.Services.model.AuthorRepository;
 import group2.Libaray.Services.model.BookRepository;
 import group2.Libaray.Services.model.FeeRepository;
+import group2.Libaray.Services.model.TransactionRepository;
 import group2.Libaray.Services.model.User;
 import group2.Libaray.Services.model.UserRepository;
 import org.springframework.boot.CommandLineRunner;
@@ -23,7 +24,7 @@ public class LibarayServicesApplication {
         private static final Logger log = LoggerFactory.getLogger(LibarayServicesApplication.class);
         
         @Bean
-    public CommandLineRunner demo(FeeRepository repository, UserRepository rep2) {
+    public CommandLineRunner demo(TransactionRepository repository) {
         return new CommandLineRunner() {
             @Override
             public void run(String[] args) throws Exception {
@@ -33,12 +34,12 @@ public class LibarayServicesApplication {
                 log.info("-------------------------------");
                     
                 
-                log.info(repository.findByuserid(rep2.findBylastname("Rejuso").get(0)).toString());
-                /*
+                //log.info(repository.findByuserid(rep2.findBylastname("Rejuso").get(0)).toString());
+                
                 repository.findAll().forEach((authName) -> {
                 log.info(authName.toString());
                 });
-                */
+                
                 log.info("");
                 
             }
