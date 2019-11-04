@@ -1,4 +1,4 @@
-CREATE TABLE transactions(
+CREATE TABLE RoomReserve(
     room_id long primary key auto_increment,
     reserveDate         timestamp default current_timestamp,
     reserveDuration        decimal(19,2),
