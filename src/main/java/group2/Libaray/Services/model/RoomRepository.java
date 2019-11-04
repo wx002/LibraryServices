@@ -5,20 +5,22 @@
  */
 package group2.Libaray.Services.model;
 
-
+import java.sql.Timestamp;
 import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-
 /**
- * BookRepository
+ *
+ * @author RR
  */
 @RepositoryRestResource
-public interface BookRepository extends CrudRepository<Book, Long>  {
-    List<Book> findByisbn(String isbn);
+public interface RoomRepository extends CrudRepository<RoomReserve, Long>  {
+    List<RoomReserve> findByroomid(int roomid);
+    
+    List<RoomReserve> findByreserveDate(Timestamp reserveDate);
     
     @Override
-    List<Book> findAll();
+    List<RoomReserve> findAll();
     
 }

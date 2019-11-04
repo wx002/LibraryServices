@@ -5,20 +5,23 @@
  */
 package group2.Libaray.Services.model;
 
-
 import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-
 /**
- * BookRepository
+ *
+ * @author RR
  */
 @RepositoryRestResource
-public interface BookRepository extends CrudRepository<Book, Long>  {
-    List<Book> findByisbn(String isbn);
+public interface TransactionRepository extends CrudRepository<Transaction, Long>  {
+    List<Transaction> findByitemstatus(String itemstatus);
+    
+    List<Transaction> findByuserid(User userid);
+    
+    List<Transaction> findBybookID(User bookID);
     
     @Override
-    List<Book> findAll();
+    List<Transaction> findAll();
     
 }

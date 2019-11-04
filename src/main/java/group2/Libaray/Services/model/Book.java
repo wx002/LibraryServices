@@ -22,23 +22,45 @@ import javax.validation.constraints.Size;
 import lombok.Data;
 import lombok.ToString;
 
+/**
+ *
+ * @author RR
+ */
 @Data
 @Entity
-@Table(name = "BooksByGenre")
-public class BooksByGenre implements Serializable{
+@Table(name = "books")
+@ToString
+public class Book implements Serializable{
     
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 2L;
     
+    //TODO, dont use data with meaning as primary key
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long genreID;
+    private Long bookID;
+    
+    private String isbn;
+    
+    private String title;
+    
+    private int copies;
+    
+    private int maxcopies;
     
     @ManyToOne
-    @JoinColumn(name = "isbn", nullable = false)
-    private Books isbn;
+    @JoinColumn(name = "author_id", nullable = false)
+    private Author author;
     
-    private String genreTitle;
+    /*
+    @OneToMany(
+            mappedBy = "pubYear",
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY
+    )
     
+    @ToString.Exclude
+    private List<BooksByYear> year;
+    */
     
-    
+
 }

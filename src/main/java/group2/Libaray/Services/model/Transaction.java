@@ -6,44 +6,50 @@
 package group2.Libaray.Services.model;
 
 import java.io.Serializable;
-import java.util.List;
-import javax.persistence.CascadeType;
+import java.sql.Timestamp;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import lombok.Data;
 import lombok.ToString;
 
 @Data
 @Entity
-@Table(name = "author")
+@Table(name = "transactions")
 @ToString
-public class Author implements Serializable{
-    private static final long serialVersionUIL = 1L;
+public class Transaction implements Serializable{
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long authorID;
+    @Column(name = "transaction_id")
+    private long id;
     
-    private String authname;
+    private Timestamp transactiondate;
     
-    //private String primaryGenre;
+    @ManyToOne
+    @JoinColumn(name = "bookID", nullable = false)
+    private Book bookID;
     
-    @OneToMany(
-            mappedBy = "author",
-            cascade = CascadeType.ALL,
-            fetch = FetchType.EAGER
-    )
-    @ToString.Exclude
-    private List<Book> books;
+    @ManyToOne
+    @JoinColumn(name = "userid", nullable = false)
+    private User userid;
     
+    @Enumerated(EnumType.STRING)
+    private Status itemstatus;
     
-
+    public enum Status{
+        HOLD,
+        RSRV,
+        LATE,
+        COUT //Checked out
+    
+    }
+    
 }
