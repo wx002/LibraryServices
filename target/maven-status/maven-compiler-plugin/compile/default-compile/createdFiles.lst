@@ -1,4 +1,13 @@
-group2\Libaray\Services\LibarayServicesApplication.class
-group2\Libaray\Services\model\BookRepository.class
-group2\Libaray\Services\model\Author.class
-group2\Libaray\Services\model\AuthorRepository.class
+group2/Libaray/Services/model/RoomReserve.class
+group2/Libaray/Services/model/Transaction$Status.class
+group2/Libaray/Services/model/User.class
+group2/Libaray/Services/LibarayServicesApplication$1.class
+group2/Libaray/Services/model/RoomRepository.class
+group2/Libaray/Services/model/Transaction.class
+group2/Libaray/Services/model/UserRepository.class
+group2/Libaray/Services/model/TransactionRepository.class
+group2/Libaray/Services/model/Fee$ChargeType.class
+group2/Libaray/Services/model/User$UserType.class
+group2/Libaray/Services/model/Fee.class
+group2/Libaray/Services/model/FeeRepository.class
+group2/Libaray/Services/model/Book.class
