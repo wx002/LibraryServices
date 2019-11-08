@@ -1,0 +1,59 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
+
+    <title>Search Catalog</title>
+</head>
+
+<div class="container">
+    <div class="text-center">
+        <h1>Find A Book</h1>
+    </div>
+    <!-- Margin between forms -->
+    <div class="my-5">
+        <form>
+            <div class="form-group">
+                <div class="col-lg-6">
+                    <label>Search By Title</label>
+                    <input type="text" class="form-control" placeholder="Title">
+                </div>
+            </div>
+            <div class="col">
+                <button type="submit" class="btn btn-primary">Search</button>
+            </div>
+        </form>
+    </div>
+    <div class="my-5">
+        <form>
+            <div class="form-group">
+                <div class="col-lg-6">
+                    <label>Search By Author</label>
+                    <input type="text" class="form-control" placeholder="Author's Name">
+                </div>
+            </div>
+            <div class="col">
+                <button type="submit" class="btn btn-primary">Search</button>
+            </div>
+        </form>
+    </div>
+    <div class="my-5">
+        <form action="#" th:action="@{/search}" th:object="${ISBNholder}" method="post">
+            <div class="form-group">
+                <div class="col-lg-6">
+                    <label>Search By ISBN</label>
+                    <input type="text" th:field="*{ISBN}" class="form-control" placeholder="ISBN">
+                </div>
+            </div>
+            <div class="col">
+                <button type="submit" class="btn btn-primary">Search</button>
+            </div>
+        </form>
+    </div>
+</div>
+</html>

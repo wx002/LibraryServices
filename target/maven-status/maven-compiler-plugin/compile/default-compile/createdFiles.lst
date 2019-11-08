@@ -1,6 +1,8 @@
 group2/Libaray/Services/model/RoomReserve.class
+group2/Libaray/Services/controller/SearchController.class
 group2/Libaray/Services/model/Transaction$Status.class
 group2/Libaray/Services/model/User.class
+group2/Libaray/Services/controller/SearchController$ISBNholder.class
 group2/Libaray/Services/LibarayServicesApplication$1.class
 group2/Libaray/Services/model/RoomRepository.class
 group2/Libaray/Services/model/Transaction.class
