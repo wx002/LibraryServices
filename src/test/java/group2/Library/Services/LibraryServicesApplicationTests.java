@@ -1,4 +1,4 @@
-package group2.Libaray.Services;
+package group2.Library.Services;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class LibarayServicesApplicationTests {
+public class LibraryServicesApplicationTests {
 
 	@Test
 	public void contextLoads() {
