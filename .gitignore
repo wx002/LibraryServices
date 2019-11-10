@@ -23,3 +23,11 @@
 hs_err_pid*
 target/test-classes/.netbeans_automatic_build
 target/classes/.netbeans_automatic_build
+target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst
+target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst
+target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+target/surefire-reports/TEST-group2.Library.Services.LibraryServicesApplicationTests.xml
+target/surefire-reports/TEST-group2.Libaray.Services.LibarayServicesApplicationTests.xml
+target/surefire-reports/group2.Library.Services.LibraryServicesApplicationTests.txt
+target/surefire-reports/group2.Libaray.Services.LibarayServicesApplicationTests.txt

@@ -1,7 +1,0 @@
--------------------------------------------------------------------------------
-Test set: group2.Libaray.Services.LibarayServicesApplicationTests
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.313 s <<< FAILURE! - in group2.Libaray.Services.LibarayServicesApplicationTests
-initializationError(group2.Libaray.Services.LibarayServicesApplicationTests)  Time elapsed: 0 s  <<< ERROR!
-java.lang.IllegalStateException: Unable to find a @SpringBootConfiguration, you need to use @ContextConfiguration or @SpringBootTest(classes=...) with your test
-
