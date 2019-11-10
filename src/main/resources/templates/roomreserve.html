@@ -1,7 +1,12 @@
-<!doctype html>
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>Library Registration Services</title>
+        <title>Room Reservation Services</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.css" crossorigin="anonymous">
@@ -10,20 +15,9 @@
            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     </head>
-
     <body>
-      <div th:replace ="fragments/header::header"/></div> 
-        <div class="container">
-            <h4> New User Registration </h4>
-            <form action="#" method="post">
-                <p>Legal First Name: <input type="text"></p>
-                <p>Legal Last Name: <input type="text" ></p>
-                <p>Username: <input type="text"> </p>
-                <p>Valid Email Address: <input type="text" ></p>
-                <p>Date of Birth: <input type="datetime"></p>
-                <p>Password: <input type="password"></p>
-                <button type="submit" class="btn btn-lg btn-primary">Submit</button>            
-            </form>
-        </div>   
+        <div th:replace ="fragments/header::header"></div>
+        <div class="container">TODO write content</div>
+        <div th:replace = "fragments/footer::footer"/>
     </body>
 </html>
