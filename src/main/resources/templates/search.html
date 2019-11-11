@@ -14,14 +14,11 @@
     <body>
         <div th:replace ="fragments/header::header"></div>
             <div class="container">
-                <h4> Search Catalog </h4>
-                <!-- Margin between forms -->
-                <div class="my-5">
-                    <form>
+                    <form action="#" th:action="@{/search}" th:object="${SearchTermHolder}" method="post">
                         <div class="form-group">
                             <div class="col-lg-6">
-                                <label>Search By Title</label>
-                                <input type="text" class="form-control" placeholder="Title">
+                                <h2>Search Catalog</h2>
+                                <input type="text" th:field="*{searchTerm}" class="form-control" placeholder="Title, Author or ISBN">
                             </div>
                         </div>
                             <div class="col">
@@ -29,35 +26,6 @@
                             </div>
                     </form>
                 </div>
-                <div class="my-5">
-                    <form>
-                        <div class="form-group">
-                            <div class="col-lg-6">
-                                <label>Search By Author</label>
-                                <input type="text" class="form-control" placeholder="Author's Name">
-                            </div>
-                        </div>
-                            <div class="col">
-                                <button type="submit" class="btn btn-primary">Search</button>
-                            </div>
-                    </form>
-                </div>
-                <div class="my-5">
-                    <form action="#" th:action="@{/search}" th:object="${ISBNholder}" method="post">
-                    <!--<form action="#" th:action="@{/search}" th:object="${ISBNholder}" method="post">-->
-                        <div class="form-group">
-                            <div class="col-lg-6">
-                                <label>Search By ISBN</label>
-                                <input type="text" th:field="*{ISBN}" class="form-control" placeholder="ISBN">
-                                <!--<input type="text" th:field="*{ISBN}" class="form-control" placeholder="ISBN">-->
-                            </div>
-                        </div>
-                            <div class="col">
-                                <button type="submit" class="btn btn-primary">Search</button>
-                            </div>
-                    </form>
-                </div>
-            </div>
         <div th:replace="fragments/footer::footer"></div>
     </body>
 </html>
