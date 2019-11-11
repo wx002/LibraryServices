@@ -18,8 +18,33 @@ and open the template in the editor.
     <body>
         <div th:replace ="fragments/header::header"></div>
         <div class ="container">
-            <h2 th:text="'Room # ' + ${roomId} + '!'" />
+            <h2 th:text="${roomId}" />
+            <table class="table">
+                Current Reservations:
+                <thead>
+                    <tr>
+                        <th scope="col"> Desc </th>
+                        <th scope="col"> Time </th>
+                        <th scope="col"> User </th>
+                    <tr>
+                <thead>
+                <tbody>
+                    <tr th:if="${roomReserves.empty}">
+                        <td colspan="2"> No reservations have been made </td>
+                    </tr>
+                        <tr scope="row" th:each="room : ${roomReserves}">
+                        <td th:text="${room.reserveDesc}"></td>
+                        <td th:text="${#temporals.format(room.reserveStart,'h:mm a')}"></td>
+                        <td th:text="${room.reservee}"></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+            
+            <a class="btn  btn-info shadow-sm " href="/roomreserve" type="button">Back</a>
+            <a class="btn  btn-success shadow-sm"  type="button" href="/roomreserve">Add</a>
         </div>
+        
         <div th:replace = "fragments/footer::footer"/>
     </body>
 </html>

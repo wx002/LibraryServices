@@ -13,6 +13,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import lombok.Data;
@@ -23,6 +25,9 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Data
 @Entity
 @ToString
+@Table(uniqueConstraints={
+        @UniqueConstraint(columnNames = {"reserve_start", "roomid"})
+})
 public class RoomReserve implements Serializable {
 
     @Id
