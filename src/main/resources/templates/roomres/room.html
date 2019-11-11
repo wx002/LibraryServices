@@ -34,15 +34,15 @@ and open the template in the editor.
                     </tr>
                         <tr scope="row" th:each="room : ${roomReserves}">
                         <td th:text="${room.reserveDesc}"></td>
-                        <td th:text="${#temporals.format(room.reserveStart,'h:mm a')}"></td>
+                        <td th:text="${#temporals.format(room.reserveStart,'h:mm a,  MMMM dd, yyyy ')}"></td>
                         <td th:text="${room.reservee}"></td>
                     </tr>
                     
                 </tbody>
             </table>
             
-            <a class="btn  btn-info shadow-sm " href="/roomreserve" type="button">Back</a>
-            <a class="btn  btn-success shadow-sm"  type="button" href="/roomreserve">Add</a>
+            <a class="btn  btn-info shadow-sm " href="/roomreserve">Back</a>
+            <a class="btn  btn-success shadow-sm" href="#" th:href="@{/room(add, roomNum=${roomNum})}">Place Reservation</a>
         </div>
         
         <div th:replace = "fragments/footer::footer"/>

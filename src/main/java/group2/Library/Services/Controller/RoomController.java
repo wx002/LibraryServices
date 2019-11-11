@@ -1,5 +1,6 @@
 package group2.Library.Services.Controller;
 import group2.Library.DBInterfaces.RoomRepository;
+import group2.Library.Services.Model.RoomReserve;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,7 +31,29 @@ public class RoomController implements WebMvcConfigurer{
             break;
         }
         model.addAttribute("roomReserves", RoomRepo.findByroomid(roomId));
-        model.addAttribute("roomId", welcome);
-        return "/roomres/room";
+        model.addAttribute("roomId", getRoomName(roomId));
+        model.addAttribute("roomNum", roomId);
+        return "roomres/room";
+    }
+    
+    @GetMapping(params = "add")
+    public String add(@RequestParam Integer roomNum, Model model) {
+
+        model.addAttribute("roomRes", new RoomReserve());
+        model.addAttribute("roomName", getRoomName(roomNum));
+        return "roomres/form";
+    }
+    
+    private String getRoomName(Integer roomNum){
+        String name = null;
+        switch(roomNum){
+            case 1:  name = "Study Room";
+            break;
+            case 2: name = "Meeting Room";
+            break;
+            case 3: name = "Entertainment Room";
+            break;
+        }
+        return name;
     }
 }
