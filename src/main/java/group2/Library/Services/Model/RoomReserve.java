@@ -14,6 +14,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import lombok.Data;
 import lombok.ToString;
 
@@ -25,7 +27,7 @@ public class RoomReserve implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "room_id")
+    @Column(name = "roomstat_id")
     private Long id;
     
     @Column(columnDefinition = "DATE")
@@ -35,8 +37,9 @@ public class RoomReserve implements Serializable {
     @Column(columnDefinition = "TIME")
     private Time reserveEnd;
     
-    private Double reserveDuration;
     
+    @Min(1)
+    @Max(3)
     private int roomid;
     
     private String reserveDesc;
