@@ -40,6 +40,7 @@ public class RoomController implements WebMvcConfigurer{
     public String add(@RequestParam Integer roomNum, Model model) {
 
         model.addAttribute("roomRes", new RoomReserve());
+        model.addAttribute("roomNum", roomNum);
         model.addAttribute("roomName", getRoomName(roomNum));
         return "roomres/form";
     }
