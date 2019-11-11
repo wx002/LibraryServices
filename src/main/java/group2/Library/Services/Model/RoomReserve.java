@@ -36,11 +36,11 @@ public class RoomReserve implements Serializable {
     private Long id;
     
     @Column(name = "reserve_start")
-    @DateTimeFormat(iso = DateTimeFormat.ISO.TIME)
+    @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
     private LocalDateTime reserveStart;
     
     @Column(name = "reserve_end")
-    @DateTimeFormat(iso = DateTimeFormat.ISO.TIME)
+    @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
     private LocalDateTime reserveEnd;
     
     

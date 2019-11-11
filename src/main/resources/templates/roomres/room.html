@@ -42,7 +42,7 @@ and open the template in the editor.
             </table>
             
             <a class="btn  btn-info shadow-sm " href="/roomreserve">Back</a>
-            <a class="btn  btn-success shadow-sm" href="#" th:href="@{/room(add, roomNum=${roomNum})}">Place Reservation</a>
+            <a class="btn  btn-success shadow-sm" href="#" th:href="@{/roomreserve/room(add, roomNum=${roomNum})}">Place Reservation</a>
         </div>
         
         <div th:replace = "fragments/footer::footer"/>
