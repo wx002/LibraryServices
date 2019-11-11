@@ -19,7 +19,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 public interface RoomRepository extends CrudRepository<RoomReserve, Long>  {
     List<RoomReserve> findByroomid(int roomid);
     
-    List<RoomReserve> findByreserveDate(Timestamp reserveDate);
+    List<RoomReserve> findByreserveStart(Timestamp reserveStart);
     
     @Override
     List<RoomReserve> findAll();
