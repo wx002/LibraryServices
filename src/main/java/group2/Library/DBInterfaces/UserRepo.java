@@ -6,19 +6,24 @@
 package group2.Library.DBInterfaces;
 import group2.Library.Services.Model.UserProfile;
 import java.util.ArrayList;
-import org.springframework.data.repository.CrudRepository;
+import java.util.List;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.stereotype.Repository;
+//import org.springframework.data.repository.CrudRepository;
 
 /**
  *
  * @author Ben Xu
  */
-public interface UserRepo extends CrudRepository<UserProfile, String>{
-    public void create(UserProfile m);
-    public void update(UserProfile m);
+@RepositoryRestResource
+public interface UserRepo extends MongoRepository<UserProfile, String>{
+    
+    UserProfile findByID(int d);
+    UserProfile findByusername(String name);
     @Override
-    public void delete(UserProfile m);
-    @Override
-    public void deleteAll();
-    public ArrayList<UserProfile> findByLibraryID(int d);
-    public ArrayList<UserProfile> findByName(String name);
+    List<UserProfile> findAll();
+
+    //public void save(UserProfile u2, String user);
+    
 }

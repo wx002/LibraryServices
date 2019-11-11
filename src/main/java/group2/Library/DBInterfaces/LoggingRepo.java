@@ -14,12 +14,5 @@ import org.springframework.data.repository.CrudRepository;
  * @author Ben Xu
  */
 public interface LoggingRepo extends CrudRepository<LoggingMangement, String>{
-    public void create(LoggingMangement m);
-    public void update(LoggingMangement m);
-    @Override
-    public void delete(LoggingMangement m);
-    @Override
-    public void deleteAll();
-    public ArrayList<LoggingMangement> findByDate(Date d);
-    public ArrayList<LoggingMangement> findByUser(String user);   
+
 }

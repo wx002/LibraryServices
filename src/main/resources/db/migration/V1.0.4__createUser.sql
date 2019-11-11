@@ -13,7 +13,7 @@ CREATE TABLE user(
     lastname        varChar(20),
     username        varChar(40),
     email           varChar(40),
-    pass            varChar(40),
+    pass            varChar(255),
     age         int,
     address     varChar(50),
     usertype        varChar(5)

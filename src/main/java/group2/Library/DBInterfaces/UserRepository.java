@@ -18,8 +18,8 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 @RepositoryRestResource
 public interface UserRepository extends CrudRepository<User, Long>  {
     List<User> findBylastname(String lastName);
-    
     List<User> findByusername(String username);
+    User findByemail(String email);
     
     @Override
     List<User> findAll();

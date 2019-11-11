@@ -14,12 +14,5 @@ import org.springframework.data.repository.CrudRepository;
  * @author Ben Xu
  */
 public interface IncomeRepo extends CrudRepository<Income, String>{
-    public void create(Income m);
-    public void update(Income m);
-    @Override
-    public void delete(Income m);
-    @Override
-    public void deleteAll();
-    public ArrayList<Income> findByLibraryID(int d);
-    public ArrayList<Income> findByName(String name);
+
 }

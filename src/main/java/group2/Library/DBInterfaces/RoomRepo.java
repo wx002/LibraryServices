@@ -13,11 +13,5 @@ import org.springframework.data.repository.CrudRepository;
  * @author Ben Xu
  */
 public interface RoomRepo extends CrudRepository<RoomSchedule, String>{
-    public void create(RoomSchedule m);
-    public void update(RoomSchedule m);
-    @Override
-    public void delete(RoomSchedule m);
-    @Override
-    public void deleteAll();
-    public ArrayList<RoomSchedule> findByRoomID(int d);
+
 }
