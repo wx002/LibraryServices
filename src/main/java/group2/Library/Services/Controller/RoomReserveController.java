@@ -38,9 +38,8 @@ public class RoomReserveController implements WebMvcConfigurer{
         while(iterator.hasNext()){
             RoomReserve room = iterator.next();
             LocalDateTime start = room.getReserveStart();
-            LocalDateTime end = room.getReserveEnd();
             if(start.toLocalDate().compareTo(currentDate)==0){
-                if(start.toLocalTime().compareTo(currentTime)<0 && end.toLocalTime().compareTo(currentTime)>0){
+                if(start.toLocalTime().getHour()==currentTime.getHour()){
                     return true;
                 };
             };
