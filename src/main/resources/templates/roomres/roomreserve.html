@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Room Reservation Services</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.css" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+           <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+        <div th:replace ="fragments/header::header"></div>
+        <div class="container">
+            <h2>Room Reservations</h2>
+            <caption class="text-muted">Rooms can be reserved in 1 hour intervals.</caption>
+            <h4>Our current rooms:</h4>
+            <div class="row">
+                <div class="col-md-4">
+                  <div class="card mb-4 shadow-sm">
+                      <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="https://cdn.pixabay.com/photo/2016/12/15/22/29/tablet-1910171_960_720.jpg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Room 1"><title>Room 1</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em" align="center">Study Room</text></img>
+                    <div class="card-body">
+                      <p class="card-text">A quiet room located on the 1st floor, South Wing. This room serves as a general purpose room and is perfect for quiet work, such as reading or writing.</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <a class="btn btn-info" th:href="@{/roomreserve/room(roomId=1)}"> Reserve </a>
+                        <a class="text-muted">Current Status:</a><a style="color:red;" th:if="${room1status}">Reserved</a><a style="color:greenyellow;" th:unless="${room1status}">Available</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                  <div class="col-md-4">
+                  <div class="card mb-4 shadow-sm">
+                      <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="https://c1.staticflickr.com/5/4675/25767226358_13c69b802e_b.jpg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Room 1"><title>Room 2</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em" align="center">Business Room</text></img>
+                    <div class="card-body">
+                      <p class="card-text">Our meeting room is located on the 2nd floor, East Wing. This room perfect for meetings and more formal brainstorming sessions, and a monitor to connect to.</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <a class="btn btn-info" th:href="@{/roomreserve/room(roomId=2)}"> Reserve </a>
+                        <a class="text-muted">Current Status:</a><a style="color:red;" th:if="${room2status}">Reserved</a><a style="color:greenyellow;" th:unless="${room2status}">Available</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card mb-4 shadow-sm">
+                      <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Berlin-_Media_Room_with_students_in_monitors_-_3122.jpg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Room 1"><title>Room 1</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em" align="center">Entertainment Room</text></img>
+                    <div class="card-body">
+                      <p class="card-text">A sound proof room located near the Entertainment Section, perfect for entertainment. HDMI compatible equipment, and adapters available at the front desk.</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <a class="btn btn-info" th:href="@{/roomreserve/room(roomId=3)}"> Reserve </a>
+                        <a class="text-muted">Current Status:</a><a style="color:red;" th:if="${room3status}">Reserved</a><a style="color:greenyellow;" th:unless="${room3status}">Available</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                
+                
+                
+                
+                
+                
+            </div>
+        </div>
+        <div th:replace = "fragments/footer::footer"/>
+    </body>
+</html>

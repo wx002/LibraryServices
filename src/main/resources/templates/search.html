@@ -1,0 +1,31 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.css" crossorigin="anonymous">
+
+        <title>Search Catalog</title>
+    </head>
+
+    <body>
+        <div th:replace ="fragments/header::header"></div>
+            <div class="container">
+                    <form action="#" th:action="@{/search}" th:object="${SearchTermHolder}" method="post">
+                        <div class="form-group">
+                            <div class="col-lg-6">
+                                <h2>Search Catalog</h2>
+                                <input type="text" th:field="*{searchTerm}" class="form-control" placeholder="Title, Author or ISBN">
+                            </div>
+                        </div>
+                            <div class="col">
+                                <button type="submit" class="btn btn-primary">Search</button>
+                            </div>
+                    </form>
+                </div>
+        <div th:replace="fragments/footer::footer"></div>
+    </body>
+</html>

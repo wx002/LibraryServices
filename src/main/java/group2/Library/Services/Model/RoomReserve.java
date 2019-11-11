@@ -6,37 +6,47 @@
 package group2.Library.Services.Model;
 
 import java.io.Serializable;
-import java.sql.Timestamp;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import lombok.Data;
 import lombok.ToString;
+import org.springframework.format.annotation.DateTimeFormat;
 
 
 @Data
 @Entity
 @ToString
+@Table(uniqueConstraints={
+        @UniqueConstraint(columnNames = {"reserve_start", "roomid"})
+})
 public class RoomReserve implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "room_id")
+    @Column(name = "roomstat_id")
     private Long id;
     
-    private Timestamp reserveDate;
+    @Column(name = "reserve_start")
+    @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
+    private LocalDateTime reserveStart;
     
-    private Double reserveDuration;
     
-    private int roomid;
     
+    @Min(1)
+    @Max(3)
+    private Integer roomid;
+    @Column(name = "reserve_desc")
     private String reserveDesc;
     
-    @OneToOne
-    private User reservee;
-
+    private Long reservee;
     
 }
