@@ -39,11 +39,6 @@ and open the template in the editor.
                     <input type="datetime-local" class ="form-control" th:field="*{reserveStart}"step="3600">
                     <span class="badge-warning" th:if="${#fields.hasErrors('reserveStart')}" th:errors="*{reserveStart}">Time slot already taken.</span>
                 </div>
-                <div class="col-lg-6">
-                    <label for="datetime"> Date and Time End</label>
-                    <input type="datetime-local" class ="form-control" th:field="*{reserveEnd}"step="3600">
-                    <span class="badge-warning" th:if="${#fields.hasErrors('reserveEnd')}" th:errors="*{reserveEnd}">Time slot already taken.</span>
-                </div>
             </div>
             <div class="row form-group">
                 <div class="col-lg-6">                
