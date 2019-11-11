@@ -1,9 +1,8 @@
-CREATE TABLE RoomReserve(
-    room_id long primary key auto_increment,
-    reserveDate     DATE,
-    reserveStart    TIME,
-    reserveEnd      TIME,
+CREATE TABLE Room_Reserve(
+    roomstat_id long primary key auto_increment,
+    reserve_start    timestamp,
+    reserve_end      timestamp,
     roomid          int,
-    reserveDesc     varchar(50),
+    reserve_desc     varchar(50),
     reservee        long
 );

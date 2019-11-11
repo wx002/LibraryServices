@@ -19,7 +19,7 @@ and open the template in the editor.
         <div th:replace ="fragments/header::header"></div>
         <div class="container">
             <h2>Room Reservations</h2>
-            
+            <caption class="text-muted">Rooms can be reserved in 1 hour intervals.</caption>
             <h4>Our current rooms:</h4>
             <div class="row">
                 <div class="col-md-4">
@@ -28,7 +28,7 @@ and open the template in the editor.
                     <div class="card-body">
                       <p class="card-text">A quiet room located on the 1st floor, South Wing. This room serves as a general purpose room and is perfect for quiet work, such as reading or writing.</p>
                       <div class="d-flex justify-content-between align-items-center">
-                        <a class="btn btn-info" th:href="@{/room(roomId=1)}"> Reserve </a>
+                        <a class="btn btn-info" th:href="@{/roomreserve/room(roomId=1)}"> Reserve </a>
                         <a class="text-muted">Current Status:</a><a style="color:red;" th:if="${room1status}">Reserved</a><a style="color:greenyellow;" th:unless="${room1status}">Available</a>
                       </div>
                     </div>
@@ -40,7 +40,7 @@ and open the template in the editor.
                     <div class="card-body">
                       <p class="card-text">Our meeting room located on the 2nd floor, East Wing. This room perfect for meetings and more formal brainstorming sessions, and a monitor to connect to.</p>
                       <div class="d-flex justify-content-between align-items-center">
-                        <a class="btn btn-info" th:href="@{/room(roomId=2)}"> Reserve </a>
+                        <a class="btn btn-info" th:href="@{/roomreserve/room(roomId=2)}"> Reserve </a>
                         <a class="text-muted">Current Status:</a><a style="color:red;" th:if="${room2status}">Reserved</a><a style="color:greenyellow;" th:unless="${room2status}">Available</a>
                       </div>
                     </div>
@@ -52,7 +52,7 @@ and open the template in the editor.
                     <div class="card-body">
                       <p class="card-text">A sound proof room located near the Entertainment Section, perfect for entertainment. HDMI compatible equipment, and adapters available at the front desk.</p>
                       <div class="d-flex justify-content-between align-items-center">
-                        <a class="btn btn-info" th:href="@{/room(roomId=3)}"> Reserve </a>
+                        <a class="btn btn-info" th:href="@{/roomreserve/room(roomId=3)}"> Reserve </a>
                         <a class="text-muted">Current Status:</a><a style="color:red;" th:if="${room3status}">Reserved</a><a style="color:greenyellow;" th:unless="${room3status}">Available</a>
                       </div>
                     </div>
