@@ -2,8 +2,10 @@ package group2.Library.Services.Controller;
 import group2.Library.DBInterfaces.RoomRepository;
 import group2.Library.Services.Model.RoomReserve;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
@@ -41,7 +43,10 @@ public class RoomController implements WebMvcConfigurer{
             case 3: welcome = "Entertainment Room";
             break;
         }
-        model.addAttribute("roomReserves", RoomRepo.findByroomid(roomId));
+        LocalDate currentDate = LocalDate.now();
+        List<RoomReserve> filteredList = RoomRepo.findByroomid(roomId);
+        filteredList.removeIf(reserve -> (reserve.getReserveStart().toLocalDate().compareTo(currentDate) < 0));
+        model.addAttribute("roomReserves", filteredList);
         model.addAttribute("roomId", getRoomName(roomId));
         model.addAttribute("roomNum", roomId);
         return "roomres/room";
@@ -58,10 +63,11 @@ public class RoomController implements WebMvcConfigurer{
     }
     
     @PostMapping
-    public String saveReserve(@ModelAttribute("reservation") RoomReserve reservation, BindingResult bindingResult) {
+    public String saveReserve(@ModelAttribute("reservation") RoomReserve reservation, @RequestParam(value="roomId") Integer roomNum, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "roomres/form";
         }
+        reservation.setRoomid(roomNum);
         RoomRepo.save(reservation);
 
         return "redirect:/roomreserve";

@@ -30,7 +30,7 @@ and open the template in the editor.
             <div class="row form-group">
                     <div class="col-lg-6">
                         <label for="datetime"> Enter room Id:<small>1 Study, 2 Business, 3 Entertainment</small></label>
-                        <input type="text" class="form-control" th:field="*{roomid}" th:value="${roomNum}" placeholder="1234567" value="${roomNum}" min="1" max="3" />
+                        <input type="hidden" class="form-control" th:field="*{roomid}" th:value="${roomNum}" placeholder="1,2, or 3"/>
                         <span class="badge-warning" th:if="${#fields.hasErrors('roomid')}" th:errors="*{roomid}">Must be between 1 and 3.</span>
                     </div>
             </div> 
