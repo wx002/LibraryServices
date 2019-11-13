@@ -43,9 +43,9 @@ public class RoomController implements WebMvcConfigurer{
             case 3: welcome = "Entertainment Room";
             break;
         }
-        LocalDate currentDate = LocalDate.now();
+        LocalDateTime currentDate = LocalDateTime.now();
         List<RoomReserve> filteredList = RoomRepo.findByroomid(roomId);
-        filteredList.removeIf(reserve -> (reserve.getReserveStart().toLocalDate().compareTo(currentDate) < 0));
+        filteredList.removeIf(reserve -> (reserve.getReserveStart().compareTo(currentDate) < -1));
         model.addAttribute("roomReserves", filteredList);
         model.addAttribute("roomId", getRoomName(roomId));
         model.addAttribute("roomNum", roomId);

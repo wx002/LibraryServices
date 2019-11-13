@@ -24,6 +24,7 @@ group2\Library\DBInterfaces\LoggingRepo.class
 group2\Library\Services\Controller\RegisterController.class
 group2\Library\DBInterfaces\IncomeRepo.class
 group2\Library\Services\Model\LoggingMangement.class
+.netbeans_automatic_build
 group2\Library\Services\Controller\RoomReserveController.class
 group2\Library\Services\Model\Transaction$Status.class
 group2\Library\Services\Model\User$UserType.class
