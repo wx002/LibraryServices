@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Book Reserve</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.css" crossorigin="anonymous">
+    </head>
+    <body background = https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Urval_av_de_bocker_som_har_vunnit_Nordiska_radets_litteraturpris_under_de_50_ar_som_priset_funnits_%283%29.jpg/1280px-Urval_av_de_bocker_som_har_vunnit_Nordiska_radets_litteraturpris_under_de_50_ar_som_priset_funnits_%283%29.jpg>
+    	<div class="container">
+    		<form action="#" th:action="@{/bookreserve}" th:object="${bookreserve}" method="post">
+    			<div class="form-group">
+                <div class="text-center">
+                <h2>Reserve a Book</h2>
+                <input type="text" th:field="*{isbn}" class="form-control" placeholder="Book ISBN" required>
+                </div>
+           		</div>
+           		<div class="form-group">
+                <div class="text-center">
+                <input type="text" th:field="*{user.id} class="form-control" placeholder="Card ID" required>
+                </div>
+           		</div>
+           	 	<div align="center">
+                <button type="submit" class="btn btn-primary">Reserve</button>
+                </div>
+             </form>
+         </div>
+    			
+    <div th:replace = "fragments/footer::footer"/>
+    </body>
+</html>
