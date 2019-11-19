@@ -1,4 +1,102 @@
 -------------------------------------------------------------------------------
 Test set: group2.Library.Services.AuthorTests
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 38.952 s - in group2.Library.Services.AuthorTests
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 5.966 s <<< FAILURE! - in group2.Library.Services.AuthorTests
+testAdd(group2.Library.Services.AuthorTests)  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanCreationException: 
+Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Invocation of init method failed; nested exception is org.flywaydb.core.internal.command.DbMigrate$FlywayMigrateException: 
+Migration V1.0.9__createBookReservation.sql failed
+--------------------------------------------------
+SQL State  : 22004
+Error Code : 22004
+Message    : Numeric value out of range: "9780756404079" in column "BOOKISBN"; SQL statement:
+insert into book_reservation(bookisbn, username)
+    values(9780756404079, 'testUserName') -- (9780756404079, 'testUserName') [22004-199]
+Location   : db/migration/V1.0.9__createBookReservation.sql (C:\Users\Administrator\Desktop\Depaul\SE\Libaray-Services\target\classes\db\migration\V1.0.9__createBookReservation.sql)
+Line       : 6
+Statement  : insert into book_reservation(bookisbn, username)
+    values(9780756404079, 'testUserName')
+
+Caused by: org.flywaydb.core.internal.command.DbMigrate$FlywayMigrateException: 
+
+Migration V1.0.9__createBookReservation.sql failed
+--------------------------------------------------
+SQL State  : 22004
+Error Code : 22004
+Message    : Numeric value out of range: "9780756404079" in column "BOOKISBN"; SQL statement:
+insert into book_reservation(bookisbn, username)
+    values(9780756404079, 'testUserName') -- (9780756404079, 'testUserName') [22004-199]
+Location   : db/migration/V1.0.9__createBookReservation.sql (C:\Users\Administrator\Desktop\Depaul\SE\Libaray-Services\target\classes\db\migration\V1.0.9__createBookReservation.sql)
+Line       : 6
+Statement  : insert into book_reservation(bookisbn, username)
+    values(9780756404079, 'testUserName')
+
+Caused by: org.flywaydb.core.internal.sqlscript.FlywaySqlScriptException: 
+
+Migration V1.0.9__createBookReservation.sql failed
+--------------------------------------------------
+SQL State  : 22004
+Error Code : 22004
+Message    : Numeric value out of range: "9780756404079" in column "BOOKISBN"; SQL statement:
+insert into book_reservation(bookisbn, username)
+    values(9780756404079, 'testUserName') -- (9780756404079, 'testUserName') [22004-199]
+Location   : db/migration/V1.0.9__createBookReservation.sql (C:\Users\Administrator\Desktop\Depaul\SE\Libaray-Services\target\classes\db\migration\V1.0.9__createBookReservation.sql)
+Line       : 6
+Statement  : insert into book_reservation(bookisbn, username)
+    values(9780756404079, 'testUserName')
+
+Caused by: org.h2.jdbc.JdbcSQLDataException: 
+Numeric value out of range: "9780756404079" in column "BOOKISBN"; SQL statement:
+insert into book_reservation(bookisbn, username)
+    values(9780756404079, 'testUserName') -- (9780756404079, 'testUserName') [22004-199]
+
+testRoom(group2.Library.Services.AuthorTests)  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanCreationException: 
+Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Invocation of init method failed; nested exception is org.flywaydb.core.internal.command.DbMigrate$FlywayMigrateException: 
+Migration V1.0.9__createBookReservation.sql failed
+--------------------------------------------------
+SQL State  : 22004
+Error Code : 22004
+Message    : Numeric value out of range: "9780756404079" in column "BOOKISBN"; SQL statement:
+insert into book_reservation(bookisbn, username)
+    values(9780756404079, 'testUserName') -- (9780756404079, 'testUserName') [22004-199]
+Location   : db/migration/V1.0.9__createBookReservation.sql (C:\Users\Administrator\Desktop\Depaul\SE\Libaray-Services\target\classes\db\migration\V1.0.9__createBookReservation.sql)
+Line       : 6
+Statement  : insert into book_reservation(bookisbn, username)
+    values(9780756404079, 'testUserName')
+
+Caused by: org.flywaydb.core.internal.command.DbMigrate$FlywayMigrateException: 
+
+Migration V1.0.9__createBookReservation.sql failed
+--------------------------------------------------
+SQL State  : 22004
+Error Code : 22004
+Message    : Numeric value out of range: "9780756404079" in column "BOOKISBN"; SQL statement:
+insert into book_reservation(bookisbn, username)
+    values(9780756404079, 'testUserName') -- (9780756404079, 'testUserName') [22004-199]
+Location   : db/migration/V1.0.9__createBookReservation.sql (C:\Users\Administrator\Desktop\Depaul\SE\Libaray-Services\target\classes\db\migration\V1.0.9__createBookReservation.sql)
+Line       : 6
+Statement  : insert into book_reservation(bookisbn, username)
+    values(9780756404079, 'testUserName')
+
+Caused by: org.flywaydb.core.internal.sqlscript.FlywaySqlScriptException: 
+
+Migration V1.0.9__createBookReservation.sql failed
+--------------------------------------------------
+SQL State  : 22004
+Error Code : 22004
+Message    : Numeric value out of range: "9780756404079" in column "BOOKISBN"; SQL statement:
+insert into book_reservation(bookisbn, username)
+    values(9780756404079, 'testUserName') -- (9780756404079, 'testUserName') [22004-199]
+Location   : db/migration/V1.0.9__createBookReservation.sql (C:\Users\Administrator\Desktop\Depaul\SE\Libaray-Services\target\classes\db\migration\V1.0.9__createBookReservation.sql)
+Line       : 6
+Statement  : insert into book_reservation(bookisbn, username)
+    values(9780756404079, 'testUserName')
+
+Caused by: org.h2.jdbc.JdbcSQLDataException: 
+Numeric value out of range: "9780756404079" in column "BOOKISBN"; SQL statement:
+insert into book_reservation(bookisbn, username)
+    values(9780756404079, 'testUserName') -- (9780756404079, 'testUserName') [22004-199]
+

@@ -1,6 +1,8 @@
 package group2.Library.Services.Controller;
 import group2.Library.DBInterfaces.RoomRepository;
+import group2.Library.DBInterfaces.RoomRepo;
 import group2.Library.Services.Model.RoomReserve;
+import group2.Library.Services.Model.RoomSchedule;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -30,6 +32,9 @@ public class RoomController implements WebMvcConfigurer{
     
     @Autowired
     private RoomRepository RoomRepo;
+    
+    @Autowired
+    private RoomRepo roomMongoRepo;
     
 
     @GetMapping
@@ -68,6 +73,9 @@ public class RoomController implements WebMvcConfigurer{
             return "roomres/form";
         }
         reservation.setRoomid(roomNum);
+        RoomSchedule r = new RoomSchedule(roomNum);
+        r.getUserTracker().add(reservation.getReserveStart().toString());
+        roomMongoRepo.save(r);
         RoomRepo.save(reservation);
 
         return "redirect:/roomreserve";

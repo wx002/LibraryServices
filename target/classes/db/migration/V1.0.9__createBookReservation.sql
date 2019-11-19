@@ -1,6 +1,6 @@
 CREATE TABLE Book_Reservation(
     b_resID int primary key auto_increment,
-    bookisbn integer,
+    bookisbn long,
     username varchar(40));
 
 insert into book_reservation(bookisbn, username)

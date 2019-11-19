@@ -22,8 +22,5 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "Logging")
 public class LoggingMangement implements Serializable{
     private Date entryDate;
-    private String entryTime;
-    private ArrayList<String> addBooks;
-    private ArrayList<String> deletedBooks;
-    private String username;
+    private String desc;
 }

@@ -1,7 +1,10 @@
 package group2.Library.Services.Controller;
 
 import group2.Library.DBInterfaces.BookRepository;
+import group2.Library.DBInterfaces.LoggingRepo;
 import group2.Library.Services.Model.Book;
+import group2.Library.Services.Model.LoggingMangement;
+import java.text.SimpleDateFormat;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -12,6 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import javax.validation.Valid;
 import java.util.ArrayList;
+import java.util.Date;
 
 
 @Controller @RequestMapping("/search")
@@ -19,6 +23,9 @@ public class SearchController {
 
     @Autowired
     private BookRepository repo;
+    
+    @Autowired
+    private LoggingRepo mongoRepo;
 
     public SearchController() {}
 
@@ -48,6 +55,12 @@ public class SearchController {
             books.clear();
 
         model.addAttribute("books", books);
+        LoggingMangement l = new LoggingMangement();
+        SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
+        Date date = new Date(System.currentTimeMillis());
+        l.setEntryDate(date);
+        l.setDesc("User has serached: " + searchTerm);
+        mongoRepo.save(l);
 
         return "searchResults";
     }
