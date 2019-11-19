@@ -34,8 +34,8 @@ public class Transaction implements Serializable{
     private Timestamp transactiondate;
     
     @ManyToOne
-    @JoinColumn(name = "bookID", nullable = false)
-    private Book bookID;
+    @JoinColumn(name = "isbn", nullable = false)
+    private Book isbn;
     
     @ManyToOne
     @JoinColumn(name = "userid", nullable = false)
