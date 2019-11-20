@@ -88,5 +88,6 @@ public class RegisterController implements WebMvcConfigurer{
         u2.setRoomReserved(new ArrayList<>());
         registerRepoMongo.save(u2);
         return "userProfile";
+        
     }
 }
