@@ -11,7 +11,7 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.css" crossorigin="anonymous">
     </head>
-    <body>
+    <body background = https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Urval_av_de_bocker_som_har_vunnit_Nordiska_radets_litteraturpris_under_de_50_ar_som_priset_funnits_%283%29.jpg/1280px-Urval_av_de_bocker_som_har_vunnit_Nordiska_radets_litteraturpris_under_de_50_ar_som_priset_funnits_%283%29.jpg>
     	<div th:replace ="fragments/header::header"></div>
         <div class="container">
     		<form action="#" th:action="@{/transaction}" th:object="${Transaction}" method="post">
@@ -23,7 +23,7 @@ and open the template in the editor.
                     </div>
                     <div class="form-group">
                         <div class="text-center">
-                            <input type="text" th:field="*{userid}" class="form-control" placeholder="User ID" required>
+                            <input type="text" th:field="*{userid} class="form-control" placeholder="User ID" required>
                         </div>
                     <div align="center">
                     <button type="submit" class="btn btn-primary">Reserve</button>
