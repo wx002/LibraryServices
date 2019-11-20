@@ -7,5 +7,5 @@ CREATE TABLE transactions(
 
 );
 
-insert into transactions(bookID, userid, itemStatus) values(0747532699, 1, 'RSRV');
-insert into transactions(bookID, userid, itemStatus) values(9780756404079, 2, 'RSRV');
+insert into transactions(bookID, userid, itemStatus) values('0747532699', 1, 'RSRV');
+insert into transactions(bookID, userid, itemStatus) values('9780756404079', 2, 'RSRV');
