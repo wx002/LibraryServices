@@ -1,0 +1,44 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-space=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.css" crossorigin="anonymous">
+
+        <title>Search Results</title>
+    </head>
+
+    <body>
+        <div th:replace ="fragments/header::header"></div>
+            <div class="text-center">
+                <h2>Users Results</h2>
+            </div>
+        <div class="container">
+            <table id="bookList" class="table">
+                <thead>
+                    <tr>
+                        <th scope="col"> ID </th>
+                        <th scope="col"> Username </th>
+                        <th scope="col"> Email </th>
+                        <th scope="col"> Address </th>
+                        <th scope="col"> Type </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:if="${users.empty}">
+                        <td colspan="2"> No matched found in catalog </td>
+                    </tr>
+                    <tr th:each="user : ${users}">
+                        <td span th:text="${user.id}"></td>
+                        <td span th:text="${user.username}"></td>
+                        <td span th:text="${user.email}"></td>
+                        <td span th:text="${user.address}"></td>
+                        <td span th:text="${user.usertype}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div th:replace="fragments/footer::footer"></div>
+    </body>
+</html>

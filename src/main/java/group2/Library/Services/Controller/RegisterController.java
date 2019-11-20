@@ -48,6 +48,12 @@ public class RegisterController implements WebMvcConfigurer{
         return "register";
     }
     
+    @GetMapping("/register/list")
+    public String getUsers(Model m){
+        m.addAttribute("users", this.registerRepoSQL.findAll());
+        return "userSearchResults";
+    }
+    
     @PostMapping("/register")
     public String postRegsiter(@ModelAttribute User u)
     {   
