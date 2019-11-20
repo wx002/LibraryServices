@@ -22,7 +22,7 @@ public interface TransactionRepository extends CrudRepository<Transaction, Long>
     
     List<Transaction> findByuserid(User userid);
     
-    List<Transaction> findISBN(Book isbn);
+    List<Transaction> findByBookID(Book bookID);
     
     @Override
     List<Transaction> findAll();
