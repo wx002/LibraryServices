@@ -39,7 +39,12 @@ public class TransactionController {
     }     
     
     @PostMapping
-    public String confirmTransact(@ModelAttribute Transaction t){
+    public String confirmTransact(@Valid Transaction t, BindingResult bindingResult, Model model){
+        if (bindingResult.hasErrors()) {
+            return "transaction";
+        }        
+        
         return "TransactionConfirm";
     }
+    
 }
